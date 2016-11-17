@@ -1,0 +1,21 @@
+{
+	"manifest_version": 2,
+
+	"name": "InStock",
+	"description": "Finds how many items are left in stock",
+	"version": "0.5",
+
+	"browser_action":{
+		"default_popup": "popup.html"
+	},
+
+	"content_scripts": [{
+		"js": ["inject.js"],
+		"matches": [ "*://*.amazon.com/gp/offer-listing/*", "*://*.amazon.co.uk/gp/offer-listing/*", "*://*.amazon.ca/gp/offer-listing/*", "*://*.amazon.de/gp/offer-listing/*", "*://*.amazon.fr/gp/offer-listing/*", "*://*.amazon.it/gp/offer-listing/*", "*://*.amazon.es/gp/offer-listing/*", "*://*.amazon.co.jp/gp/offer-listing/*" ]
+	}],
+
+	"permissions":[
+		"http://www.edwardhoward.io/*",
+		"*://*.amazon.com/gp/offer-listing/*", "*://*.amazon.co.uk/gp/offer-listing/*", "*://*.amazon.ca/gp/offer-listing/*", "*://*.amazon.de/gp/offer-listing/*", "*://*.amazon.fr/gp/offer-listing/*", "*://*.amazon.it/gp/offer-listing/*", "*://*.amazon.es/gp/offer-listing/*", "*://*.amazon.co.jp/gp/offer-listing/*"
+	]
+}
