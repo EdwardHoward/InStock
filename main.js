@@ -4,7 +4,6 @@
 		currentTab = tab;
 		chrome.tabs.sendMessage(tab.id, {action: 'getStock'});
 	})
-
 	chrome.runtime.onMessage.addListener(function(req){
 		if(req.action == 'newInfo'){
 			let request = new XMLHttpRequest();
@@ -12,7 +11,6 @@
 			request.onload = function(){
 				chrome.tabs.sendMessage(currentTab.id, {action: 'appendStocks', response: request.response});
 			}
-
 			request.send();
 		}
 	})
